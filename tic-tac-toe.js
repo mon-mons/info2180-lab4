@@ -1,8 +1,29 @@
 window.onload =function(){
 	var board=document.getElementById("board");
 	var child= board.children;
-	for( var i=0; i< child.length; i++ ){
+	var xo="X";
+	var state= ["","","","","","","","",""];
+	for( let i=0; i < child.length; i++ ){
 		
-			child[i].classList.add("square");
+		child[i].classList.add("square");
+		child[i].onclick=function() {
+		myFunction(child[i], i)};		
 	}
+
+	function myFunction(child, i) {
+		if(state[i]===""){
+			if (xo==="X") {
+				child.innerHTML="X";
+				state[i] ="X";
+				
+				xo="O";
+			} else
+			if (xo==="O") {
+				child.innerHTML="O";
+				state[i] = "O";
+				xo="X";
+			}
+		}
+	}
+	
 };

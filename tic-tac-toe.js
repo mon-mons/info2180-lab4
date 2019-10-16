@@ -14,12 +14,14 @@ window.onload =function(){
 		if(state[i]===""){
 			if (xo==="X") {
 				child.innerHTML="X";
+				child.classList.add("X");
 				state[i] ="X";
-				
+
 				xo="O";
 			} else
 			if (xo==="O") {
 				child.innerHTML="O";
+				child.classList.add("O");
 				state[i] = "O";
 				xo="X";
 			}

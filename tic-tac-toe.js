@@ -7,10 +7,15 @@ window.onload =function(){
 		
 		child[i].classList.add("square");
 		child[i].onclick=function() {
-		myFunction(child[i], i)};		
+		onClicked(child[i], i)};	
+		child[i].onmouseover= function(){onHover(child[i]);};
+		child[i].onmouseout= function(){  
+			child[i].classList.remove("hover");
+		}
+
 	}
 
-	function myFunction(child, i) {
+	function onClicked(child, i) {
 		if(state[i]===""){
 			if (xo==="X") {
 				child.innerHTML="X";
@@ -26,6 +31,10 @@ window.onload =function(){
 				xo="X";
 			}
 		}
+	}
+
+	function onHover(child){
+		child.classList.add("hover");
 	}
 	
 };
